@@ -1,5 +1,6 @@
 package com.vent.bookmarkerapi.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.domain.Page;
@@ -13,7 +14,9 @@ public class BookmarksDto {
     private long totalElements;
     private int totalPages;
     private int currentPage;
+    @JsonProperty("isFirst")
     private boolean isFirst;
+    @JsonProperty("isLast")
     private boolean isLast;
     private boolean hasNext;
     private boolean hasPrevious;
