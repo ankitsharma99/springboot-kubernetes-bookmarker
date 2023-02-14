@@ -20,7 +20,7 @@ public class BookmarkService {
     {
         int pageNo = page < 1 ? 0 : page-1;
         Pageable pageable = PageRequest.of(pageNo, 10, Sort.Direction.DESC, "createdAt");
-        Page<BookmarkDto> bookmarkDtoPage = this.bookmarkRepository.findAll(pageable).map(bookmarkMapper::toDto);
+        Page<BookmarkDto> bookmarkDtoPage = this.bookmarkRepository.findBookmarks(pageable);
         return new BookmarksDto(bookmarkDtoPage);
     }
 }
